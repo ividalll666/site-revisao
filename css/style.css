@@ -202,7 +202,7 @@ html
 
     /* organizando como essa malha irá ser disposta */
     grid-template-columns: 2fr 1fr;
-    grid-template-rows: 100% 100% 100%; 
+    grid-template-rows: .5fr 1fr .3fr; 
     
     /* espaco entre os grid-elements  */
     gap: 15px;
@@ -476,7 +476,7 @@ img
         #container-conteudo
         {
             grid-template-columns: 1fr;
-            grid-template-rows: 100% .3fr 100% 100%;
+            grid-template-rows: .5fr .1fr .5fr .5fr;
 
             gap: 25px 0px;
         }
