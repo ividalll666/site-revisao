@@ -1,0 +1,542 @@
+/* 
+    Essa será uma breve introducão para nossos estudos. Iremos ver o início agora,
+    e depois iremos separar os conteúdos, com exemplos e questões. Logo após de ter 
+    o conteúdo absorvido, voltaremos nesse site para aplicarmos tudo. Não se preocupe
+    em entender tudo que está nessa página, porque aqui iremos só ver por cima o que 
+    iremos aprender. 
+
+    OBS: toda explicacão seguida por # indica que em alguma linha posterior 
+    têm-se uma explicacão mais detalhada ou a indicacão de onde teremos o estudo 
+    mais aprofundado sobre determinado assunto.
+    
+    Aqui será o ponto de encontro de toda a matéria.  
+*/
+
+
+*
+{
+/* 
+    reset da página: formatando TODOS os elementos.
+
+    O asterisco confirma que tudo o que está dentro do nosso documento 
+    HTML irá ter a mesma formatacão, a princípio, do que está dentro das chaves.
+    É muito importante fazer esse reset na página pois ela possui bordas extras 
+    que as vezes atrapalham no que queremos fazer, elém de que o box-sizing é bem problemático.
+    
+    Por padrão, o box-sizing dos elementso é definido como 'content-box', o que pode 
+    gerar conflitos na largura. Iremos estudar isso mais no detalhe na parte de "estudo de
+    formatacões." 
+*/
+
+    margin: 0;
+    padding: 0;  
+
+    /* faz o tamanho da margem ser incluída no tamanho do container */
+    box-sizing: border-box;
+}
+
+
+:root
+{
+/* 
+    Raiz do documento: serve para podermos extrair algumas propriedades já definidas dele, para aplicarmos 
+    em nossas outras propriedades. Serve para definir um padrão para algo. Iremos ver mais afundo sobre ele,  
+    font-sizes, variáveis no "estudo de formatacões." também. 
+*/
+
+    /* vw: view Width */
+    font-size: 1vw;
+
+    /* nome da font */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    /* variaveis com as cores principais */
+    --cor-primaria: #008080;
+    --cor-secundaria: #2a5d67;
+    --cor-terciaria: #171332;
+
+    /* exemplo que outras coisas alem de cor podem ser guardadas em variaveis */
+    --padding-nav: 0.5% 1% 0.5% 1%;
+
+
+}
+
+/* mudando o fundo da página */
+html
+{
+    background-color: var(--cor-terciaria);
+
+    /* colocando um movimento suave para rolagem da página */
+    scroll-behavior: smooth;
+}
+
+
+/* ------------------------------------- navbar ------------------------------------ */
+
+#navbar
+{
+/*
+     ul que criamos formatada para ser uma nav, forma mais simples de fazer uma navbar 
+*/
+
+    /* chamando a segunda cor */
+    background-color: var(--cor-secundaria);
+
+    /* colocando a cor nas letras */
+    color: white;
+
+    /* # - nome do display que usaremos na nossa navbar: flex */
+    display:flex;
+
+    /* padding que a navbar terá para não ter itens grudados em pontas */
+    padding: 1%;
+
+    /* justificando os elementos da nav no centro */
+    justify-content: center;
+
+    /* tirando a decoracão da lista: sem bolas, letras ou whatever */
+    list-style: none;
+
+    /* propriedade que diz ao que o container será relativo: no caso de fixed, a página inteira */
+    position: fixed;
+
+    /* tamanho que deve ser declarado: saber qual o tamanho dessa div */
+    width: 100%;
+
+    /* tamanho das letras */
+    font-size: 1.5rem;
+
+    /* propriedade que define onde o container ficará */
+    top: 0%;
+
+
+    text-transform: uppercase;
+/*
+    # - explicacão sobre displays na parte "Estudo de Displays"
+*/
+
+
+    z-index: 10;
+
+}
+
+.navbar-item
+{
+/*
+    list item: agora sendo como elemento ta navbar 
+*/
+
+    /* cor do botão */
+    background-color: var(--cor-primaria);
+
+    /* colocando margem apenas dos lados, para não ficarem juntos os botões */
+    margin: 0 1%;
+
+    /* colocando padding para as palavras "respirarem dentro do botão */
+    padding: 1%;
+
+    /* colocando um tamanho no botão */
+    width: 10%;
+
+    /* transicão para que o botão mude de comportamento de forma homogênea */
+    transition: 200ms ease-out;
+
+    /* alinhando o texto no centro do botão */
+    text-align: center;
+
+    /* arredondamento de bordas */
+
+    scroll-behavior: smooth;
+
+}
+
+/* comportamento a ser acionado quando o item estiver em hover */
+.navbar-item:hover
+{
+    /* como o cursor ficará ao hover */
+    cursor: pointer;
+
+    /* propriedade que muda a escala do elemento */
+    transform: scale(1.2);
+}
+
+/* ------------------------------------- conteudo ------------------------------------ */
+
+/* div que guarda o conteudo da página */
+.container
+{
+    color: white;
+
+    /* chamando a variavel pro seu lugar: cor de fundo */
+    background-color: var(--cor-terciaria);
+
+    /* colocando o margin-top de 5% para que o conteúdo não fique abaixo da nav */
+
+    /* colocando um padding de 5% para não ficar grudado nas pontas */
+    padding: 0% 5% 0 5%;
+
+    /* justificando o texto */
+    text-align: justify;
+}
+
+.container .title-container
+{
+    text-align: left;
+    font-size: 4rem;
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+
+.container .subtitle-container
+{
+    font-size: 2rem;
+    margin-top: -3%;
+    margin-bottom: 3%;
+}
+
+/* div que guarda especificamente o primeiro conteudo */
+#container-conteudo
+{
+    /* # - display grid: organizando os elementos como malha */
+    display: grid;
+
+    /* organizando como essa malha irá ser disposta */
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 100% 100% 100%; 
+    
+    /* espaco entre os grid-elements  */
+    gap: 15px;
+
+    /* tamanho da fonte baseada no root que definimos */
+    font-size: 1.5rem;
+    /* tamanho minimo necessário para qe o container não fique embaixo da navbar */
+    padding-top: 10%;
+
+}
+
+img
+{
+    /* definimos uma largura e altura na foto para ela não pegar espacos maiores do que o próprio container. */
+    width: 100%;
+    height: 100%;
+
+    /* propriedade que faz com que a foto se ajuste, dando zoom, ao container */
+    object-fit: cover;
+
+    /* propriedade que arrasta a imagem pros lados para ela ficar onde queremos, por conta da propriedade de cima */
+    object-position: 70%;
+}
+
+.box-foto
+{
+    /* propriedade flex para que o container da foto se expanda, assim, expandindo a foto também */
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+/* distribuicão do conteúdo no grid */
+#texto-inicio
+{
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+#texto-inicio h1
+{
+    margin-bottom: 2%;
+}
+
+#container-foto
+{
+    grid-column: 2/3;
+    grid-row: 1/3;
+
+    background-color: aliceblue;
+}
+
+#texto-meio
+{
+    grid-column: 1/2;
+    grid-row: 2/3;
+
+}
+
+#texto-final
+{
+    grid-column: 1/3;
+    grid-row: 3/4;
+}
+
+/* ---------------------------------------- galeria -------------------------------  */
+
+#container-galeria
+{
+    /* propriedades display para guardar nossas fotos */
+    display: flex;
+    flex-wrap: wrap;
+
+    margin-top: 3%;
+}
+
+.img
+{
+    /* tamanho mínimo de cada foto */
+    flex-basis: 32%;
+    min-width: 32%;
+
+    border: 1px solid black;
+
+    /* caso seja necessário, as fotos irão crescer para preencher o container */
+    flex-grow: 1;
+}
+
+/* ------------------------------------- container-info ------------------------ */
+
+.container-info
+{
+    margin-top: 3%;
+    margin-bottom: 3%;
+    padding: 2%;
+    text-align: center;
+    background-color: var(--cor-terciaria);
+
+    /* propriedade que aplica algum filtro a determinado elemento: no caso, luminosidade */
+    filter: brightness(150%);
+}
+
+.container-info h1
+{
+    padding-bottom: 2%;
+    font-size: 2.8rem;
+}
+
+.container-info #btn1
+{
+    background: none;
+
+    width: 15%;
+    padding: 1%;
+    
+    font-size: 1.5rem;
+
+    color: white;
+
+    border: 1px solid white;
+
+    margin-bottom: 3%;
+    cursor: pointer;
+
+
+    position: relative;
+    overflow: hidden;
+}
+
+/* configuracão do círculo de dentro do botão */
+.container-info #btn1:before
+{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+
+    transform: scale(0);
+   
+    bottom: -50%;
+    left: -50%; 
+
+    background-color: var(--cor-secundaria);
+
+    /* trasnformando o quadrado de dentro em um círculo */
+    clip-path: circle();
+    
+    transition: 1s;
+
+    /* colocando-o atrás do texto do botão */
+    z-index: -1;
+}
+
+/* posicionamento final do fundo do botão: irá cobrir todo o espaco */
+.container-info #btn1:hover:before 
+{
+    transform: scale(10);
+}
+
+/* container que guarda as divs que queremos animar */
+.box-info
+{
+    display: flex;
+    justify-content: center;
+    flex-basis: 25%;
+    opacity: 0;
+}
+
+/* config geral da div */
+.info
+{
+    margin: 2%;
+    background-color: var(--cor-secundaria);
+}
+
+.info h2
+{
+    padding: 3%;
+    background-color: var(--cor-primaria);
+}
+.info p
+{
+    padding: 1%;
+    text-align: center;
+}
+
+
+/* animacões que serão implementadas */
+.info-show
+{
+    animation: 1s showinfo forwards;
+}
+
+.info-hide
+{
+    animation: 1s hideinfo forwards;
+}
+
+/* keyframes: propriedade que anima nossas divs */
+@keyframes hideinfo
+{
+    0%
+    {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+
+    100%
+    {
+        transform: translateY(-30%);
+        opacity: 0;
+    }
+}
+
+@keyframes showinfo
+{
+    0%
+    {
+        opacity: 0;
+        transform: translateY(-30%);
+    }
+
+    100%
+    {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
+/*  ----------------------------------------------- AOS library ------------------------------ */
+
+#box-aos
+{
+    display: block;
+}
+
+/* ----------------------------------------------   media query -------------------------------- */
+
+/* As medias querys são segmentos do código especializados a adaptá-lo a determinadas condicões.
+    No caso, apesar de nossa página se comportar de maneira responsiva e de boa visualizacão em
+    muitos tamanhos, deixa um pouco a desejar no mobile. 
+    
+    Recomendo que, dependendo do tamanho da media query, para organizacão, seja melhor disponibilizá-la
+    em dois CSS diferentes. Mas para compactacão dessa revisão, irei colocá-la aqui mesmo.
+    
+    Quanto melhor escrito o css, mais fácil e rápida será a adaptacão. Aconselho que comente 
+    essa media query para ver como a página se comporta sem ela, e como, depois de alguns 
+    ajustes, ela fica. Ajustes sempre serão necessários para uma boa visualizacão.*/
+
+    /* normalmente os mobiles se enquadram abaixo de 600px */
+    @media (max-width: 600px)
+    {
+
+        :root
+        {
+            font-size: 3vw;
+        }
+        /* ------------------ navbar ------------------- */
+        #navbar
+        {
+            font-size: 1rem;
+        }
+
+        .navbar-item
+        {
+            width: 20%;
+        }
+
+        /* ---------------- container-conteudo ---------- */
+
+        #container-conteudo
+        {
+            grid-template-columns: 1fr;
+            grid-template-rows: 100% .3fr 100% 100%;
+
+            gap: 25px 0px;
+        }
+
+        .conatainer h1
+        {
+            font-size: 1.5rem;
+        }
+
+        #texto-inicio {
+            grid-column: 1/3;
+            grid-row: 1/2;
+        }
+
+        #container-foto {
+            grid-column: 1/3;
+            grid-row: 2/3;
+            background-color: aliceblue;
+        }
+
+        #texto-meio 
+        {
+            grid-column: 1/2;
+            grid-row: 3/4;
+        }
+
+        #texto-final
+        {
+            grid-column: 1/2;
+            grid-row: 4/5;
+        }
+
+        /* ------------------- galeria ---------------- */
+
+        #galeria p 
+        {
+            font-size: 1.4rem;
+        }
+
+        /* ----------------- animation ------------------ */
+        .container-info #btn1
+        {
+            margin-top: 3%;
+            width: 35%;
+        }
+
+        .box-info
+        {
+            font-size: 1.2rem;
+            flex-wrap: wrap;
+        }
+
+        .info
+        {
+            flex-basis: 40%;
+        }
+
+        #aos
+        {
+            margin-bottom: 20%;
+        }
+
+    }
