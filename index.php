@@ -17,6 +17,10 @@
     <!-- fonte de documentos/tecnologia para rodar o AnimateOnScroll -->
     <script src="js/aos.js"></script>
 
+    <!-- documentos para rodar o slick: carousel -->
+    <link rel="stylesheet" href="css/slick-theme.css">
+    <link rel="stylesheet" href="css/slick.css">
+
     <title> Revisão - introducão </title>
 
 </head>
@@ -201,7 +205,8 @@
 
             <section class="container">
 
-                <h1 class = "title-container"> Aos library </h1>
+                <h1 class = "title-container"> Bibliotecas: </h1>
+                <h2 class="subtitle-container"> aos library</h2>
 
                 <div class="container-info" id="aos">
 
@@ -233,8 +238,29 @@
                 </div>
 
             </section>
+
+            <section class="container">
+
+                <h1 class="title-container"> Slick Carousel </h1>
+
+                <div class="container-info">
+
+                    <div class="carousel">
+
+                        <div class="carousel-img"> <img src="img/Chrysanthemum.jpg" alt="">  </div>
+                        <div class="carousel-img"> <img src="img/Desert.jpg" alt="">         </div>
+                        <div class="carousel-img"> <img src="img/Jellyfish.jpg" alt="">      </div>
+                        <div class="carousel-img"> <img src="img/Koala.jpg" alt="">      </div>
+
+                    </div>
+
+
+                </div>
+
+            </section>
         </main>
 
+     
         
     <!-- configuracões do plugin e iniciacão: funciona melhor no final do html-->
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
@@ -245,6 +271,16 @@
                 delay: 500
             }
         );
+    </script>
+
+    <!-- script do slick -->
+    <script src="js/slick.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function()
+        {
+            $('.carousel').slick({autoplay: true});
+        });
     </script>
     
 </body>
