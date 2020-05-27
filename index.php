@@ -44,7 +44,7 @@
             <li onclick="location.href ='#container-conteudo'"  class="navbar-item"> home  </li>
             <li onclick="location.href ='#galeria'" class="navbar-item">galery    </li>
             <li onclick="location.href ='#animation'" class="navbar-item">Animation </li>
-            <li onclick="location.href ='#aos'" class="navbar-item"> AOS </li>
+            <li onclick="location.href ='#aos'" class="navbar-item"> Bibliotecas </li>
         </ul>
 
     </nav>
@@ -262,41 +262,8 @@
 
             </section>
 
-            <section class="container">
-
-                <h1 class="title-container"> Glider library </h1>
-
-                <div class="container-info">
-
-                    <div class="glider-contain">
-
-                        <button class="glider-prev">
-                            <i class="fas fa-chevron-left"></i>
-                        </button>
-
-                            <div class="glider">
-
-                                <div class="carousel-img"><img src="img/Chrysanthemum.jpg" alt="">  </div>
-                                <div class="carousel-img"><img src="img/Desert.jpg" alt="">         </div>
-                                <div class="carousel-img"><img src="img/Jellyfish.jpg" alt="">      </div>
-                                <div class="carousel-img"><img src="img/Koala.jpg" alt="">          </div>
-
-                            </div>
-                        
-                        <button class="glider-next">
-                            <i class="fas fa-chevron-right"></i>
-                        </button>
-
-                        <div role="tablist" class="dots"></div>
-
-                    </div>
-
-                </div>
-
-            </section>
         </main>
-
-     
+    
         
     <!-- configuracões do plugin e iniciacão: funciona melhor no final do html-->
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
@@ -315,28 +282,12 @@
     <script type="text/javascript">
         $(document).ready(function()
         {
-            $('.carousel-slick').slick({ dots: true,autoplay: true});
+            $('.carousel-slick').slick(
+                { 
+                dots: true, autoplay: true
+                });
         });
     </script>
 
-    <!-- script do glider -->
-    <script src="js/glider.js"></script>
-
-    <script>
-        window.addEventListener('load', function()
-        {
-            new Glider(document.querySelector('.glider'),
-            {
-                slidesToShow: 1,
-                dots: '.dots',
-                draggable: true,
-                rewind: true,
-                arrows: {
-                    prev: '.glider-prev',
-                    next: '.glider-next'
-                }
-            });
-        })
-    </script>
 </body>
 </html>

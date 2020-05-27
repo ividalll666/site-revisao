@@ -15,7 +15,9 @@
     src: url('./fonts/slick.eot');
     src: url('./fonts/slick.eot?#iefix') format('embedded-opentype'), url('./fonts/slick.woff') format('woff'), url('./fonts/slick.ttf') format('truetype'), url('./fonts/slick.svg#slick') format('svg');
 }
-/* Arrows */
+
+/*  ----------------------------------------------------- Arrows ------------------------------------------------ */
+
 .slick-prev,
 .slick-next
 {
@@ -29,6 +31,7 @@
 
     width: 20px;
     height: 20px;
+
     padding: 0;
     -webkit-transform: translate(0, -50%);
     -ms-transform: translate(0, -50%);
@@ -40,6 +43,7 @@
     border: none;
     outline: none;
     background: transparent;
+
 }
 .slick-prev:hover,
 .slick-prev:focus,
@@ -67,11 +71,13 @@
 .slick-next:before
 {
     font-family: 'slick';
-    font-size: 20px;
+    font-size: 5vw;
     line-height: 1;
 
-    opacity: .75;
+    opacity: .3;
     color: white;
+
+    transition: .5s;
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -79,41 +85,42 @@
 
 .slick-prev
 {
-    left: -25px;
+    left: -10%;
+    z-index: 10;
 }
 [dir='rtl'] .slick-prev
 {
-    right: -25px;
+    right: 0;
     left: auto;
 }
 .slick-prev:before
 {
-    content: '←';
+    content: '❮';
 }
 [dir='rtl'] .slick-prev:before
 {
-    content: '→';
+    content: '❯';
 }
 
 .slick-next
 {
-    right: -25px;
+    right: -8.5%;
 }
 [dir='rtl'] .slick-next
 {
     right: auto;
-    left: -25px;
+    left: 0px;
 }
 .slick-next:before
 {
-    content: '→';
+    content: '❯';
 }
 [dir='rtl'] .slick-next:before
 {
-    content: '←';
+    content: '❮';
 }
 
-/* Dots */
+/* -------------------------------------------------- Dots ---------------------------------- */
 .slick-dotted.slick-slider
 {
     margin-bottom: 30px;
@@ -129,6 +136,7 @@
     width: 100%;
     padding: 0;
     margin: 0;
+
 
     list-style: none;
 
@@ -184,7 +192,8 @@
     position: absolute;
     top: 0;
     left: 0;
-
+    border-radius: 50%;
+    background: #fff;
     width: 20px;
     height: 20px;
 
@@ -192,7 +201,9 @@
     text-align: center;
 
     opacity: .25;
-    color: black;
+    color: transparent;
+
+    transition: .5s;
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -200,5 +211,5 @@
 .slick-dots li.slick-active button:before
 {
     opacity: .75;
-    color: black;
+    color: white;
 }

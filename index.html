@@ -11,11 +11,19 @@
     <script src="js/script.js"></script>
 
 
-    <!-- css da animacão em scroll -->
-    <link rel="stylesheet" href="css/aos.css" />
-    
-    <!-- fonte de documentos/tecnologia para rodar o AnimateOnScroll -->
+    <!-- documentos que são precisos para a animacão em scroll -->
+    <link rel="stylesheet" href="css/aos.css" />    
     <script src="js/aos.js"></script>
+
+    <!-- documentos para rodar o slick: carousel -->
+    <link rel="stylesheet" href="css/slick-theme.css">
+    <link rel="stylesheet" href="css/slick.css">
+
+    <!-- documento necessário para rodar o glider -->
+    <link rel="stylesheet" href="css/glider.css">
+
+    <!-- source do icone: font-awesonme -->
+    <script src="https://kit.fontawesome.com/782e4cfd7d.js" crossorigin="anonymous"></script>
 
     <title> Revisão - introducão </title>
 
@@ -36,7 +44,7 @@
             <li onclick="location.href ='#container-conteudo'"  class="navbar-item"> home  </li>
             <li onclick="location.href ='#galeria'" class="navbar-item">galery    </li>
             <li onclick="location.href ='#animation'" class="navbar-item">Animation </li>
-            <li onclick="location.href ='#aos'" class="navbar-item"> AOS </li>
+            <li onclick="location.href ='#aos'" class="navbar-item"> Bibliotecas </li>
         </ul>
 
     </nav>
@@ -201,7 +209,8 @@
 
             <section class="container">
 
-                <h1 class = "title-container"> Aos library </h1>
+                <h1 class = "title-container"> Bibliotecas: </h1>
+                <h2 class="subtitle-container"> aos library</h2>
 
                 <div class="container-info" id="aos">
 
@@ -233,8 +242,28 @@
                 </div>
 
             </section>
-        </main>
 
+            <section class="container">
+
+                <h1 class="title-container"> Slick library </h1>
+
+                <div class="container-info">
+
+                    <div class="carousel-slick">
+
+                        <div class="carousel-img"> <img src="img/Chrysanthemum.jpg" alt="">  </div>
+                        <div class="carousel-img"> <img src="img/Desert.jpg" alt="">         </div>
+                        <div class="carousel-img"> <img src="img/Jellyfish.jpg" alt="">      </div>
+                        <div class="carousel-img"> <img src="img/Koala.jpg" alt="">          </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+    
         
     <!-- configuracões do plugin e iniciacão: funciona melhor no final do html-->
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
@@ -246,6 +275,19 @@
             }
         );
     </script>
-    
+
+    <!-- script do slick -->
+    <script src="js/slick.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function()
+        {
+            $('.carousel-slick').slick(
+                { 
+                dots: true, autoplay: true
+                });
+        });
+    </script>
+
 </body>
 </html>
