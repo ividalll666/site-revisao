@@ -11,15 +11,19 @@
     <script src="js/script.js"></script>
 
 
-    <!-- css da animacão em scroll -->
-    <link rel="stylesheet" href="css/aos.css" />
-    
-    <!-- fonte de documentos/tecnologia para rodar o AnimateOnScroll -->
+    <!-- documentos que são precisos para a animacão em scroll -->
+    <link rel="stylesheet" href="css/aos.css" />    
     <script src="js/aos.js"></script>
 
     <!-- documentos para rodar o slick: carousel -->
     <link rel="stylesheet" href="css/slick-theme.css">
     <link rel="stylesheet" href="css/slick.css">
+
+    <!-- documento necessário para rodar o glider -->
+    <link rel="stylesheet" href="css/glider.css">
+
+    <!-- source do icone: font-awesonme -->
+    <script src="https://kit.fontawesome.com/782e4cfd7d.js" crossorigin="anonymous"></script>
 
     <title> Revisão - introducão </title>
 
@@ -241,19 +245,51 @@
 
             <section class="container">
 
-                <h1 class="title-container"> Slick Carousel </h1>
+                <h1 class="title-container"> Slick library </h1>
 
                 <div class="container-info">
 
-                    <div class="carousel">
+                    <div class="carousel-slick">
 
                         <div class="carousel-img"> <img src="img/Chrysanthemum.jpg" alt="">  </div>
                         <div class="carousel-img"> <img src="img/Desert.jpg" alt="">         </div>
                         <div class="carousel-img"> <img src="img/Jellyfish.jpg" alt="">      </div>
-                        <div class="carousel-img"> <img src="img/Koala.jpg" alt="">      </div>
+                        <div class="carousel-img"> <img src="img/Koala.jpg" alt="">          </div>
 
                     </div>
 
+                </div>
+
+            </section>
+
+            <section class="container">
+
+                <h1 class="title-container"> Glider library </h1>
+
+                <div class="container-info">
+
+                    <div class="glider-contain">
+
+                        <button class="glider-prev">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+
+                            <div class="glider">
+
+                                <div class="carousel-img"><img src="img/Chrysanthemum.jpg" alt="">  </div>
+                                <div class="carousel-img"><img src="img/Desert.jpg" alt="">         </div>
+                                <div class="carousel-img"><img src="img/Jellyfish.jpg" alt="">      </div>
+                                <div class="carousel-img"><img src="img/Koala.jpg" alt="">          </div>
+
+                            </div>
+                        
+                        <button class="glider-next">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+
+                        <div role="tablist" class="dots"></div>
+
+                    </div>
 
                 </div>
 
@@ -279,9 +315,28 @@
     <script type="text/javascript">
         $(document).ready(function()
         {
-            $('.carousel').slick({autoplay: true});
+            $('.carousel-slick').slick({ dots: true,autoplay: true});
         });
     </script>
-    
+
+    <!-- script do glider -->
+    <script src="js/glider.js"></script>
+
+    <script>
+        window.addEventListener('load', function()
+        {
+            new Glider(document.querySelector('.glider'),
+            {
+                slidesToShow: 1,
+                dots: '.dots',
+                draggable: true,
+                rewind: true,
+                arrows: {
+                    prev: '.glider-prev',
+                    next: '.glider-next'
+                }
+            });
+        })
+    </script>
 </body>
 </html>
