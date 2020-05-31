@@ -173,7 +173,8 @@
 
             <section class="container">
 
-                <h1 class = "title-container" > Animation </h1>
+                <h1 class = "title-container" > Disparar animacão </h1>
+                <h2 class ="subtitle-conatiner"> Estudo para fazer ocorrer uma animacão a partir de um evento.</h2>
 
                 <div class="container-info" id="animation">
 
