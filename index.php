@@ -246,7 +246,7 @@
             <section class="container">
 
                 <h1 class="title-container"> Slick library </h1>
-
+                <h2 class="subtitle-container"> Biblioteca com algumas alteracões de interface feitas por mim</h2>
                 <div class="container-info">
 
                     <div class="carousel-slick">
